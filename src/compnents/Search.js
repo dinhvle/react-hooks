@@ -23,16 +23,30 @@ const Search = () => {
     search();
   }, [term]);
 
-  return (
-    <div className="ui form">
-      <div className="field">
-        <label>Enter Search Term</label>
-        <input
-          value={term}
-          onChange={(e) => setTerm(e.target.value)}
-          className="input"
-        />
+  const renderedResults = results.map((result) => {
+    return (
+      <div key={result.pageid} className="item">
+        <div className="content">
+          <div className="header">{result.title}</div>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+        </div>
       </div>
+    );
+  });
+
+  return (
+    <div>
+      <div className="ui form">
+        <div className="field">
+          <label>Enter Search Term</label>
+          <input
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+            className="input"
+          />
+        </div>
+      </div>
+      <div className="ui celled list">{renderedResults}</div>
     </div>
   );
 };
