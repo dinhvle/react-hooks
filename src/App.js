@@ -5,6 +5,7 @@ import Search from "./compnents/Search";
 import Translate from "./compnents/Translate";
 import Route from "./compnents/Route";
 import Header from "./compnents/Header";
+import Link from "./compnents/Link";
 
 const items = [
   {
@@ -40,6 +41,7 @@ const App = () => {
   const [selected, setSelected] = useState(options[0]);
   return (
     <div>
+      <Link />
       <Header />
       <Route path="/">
         <Accordion items={items} />
