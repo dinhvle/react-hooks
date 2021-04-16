@@ -6,6 +6,7 @@ import Translate from "./compnents/Translate";
 import Route from "./compnents/Route";
 import Header from "./compnents/Header";
 import Link from "./compnents/Link";
+import Increment from "./compnents/Increment";
 
 const items = [
   {
@@ -59,6 +60,9 @@ const App = () => {
       </Route>
       <Route path="/translate">
         <Translate />
+      </Route>
+      <Route path="/increment">
+        <Increment />
       </Route>
     </div>
   );
