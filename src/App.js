@@ -7,6 +7,7 @@ import Route from "./compnents/Route";
 import Header from "./compnents/Header";
 import Link from "./compnents/Link";
 import Increment from "./compnents/Increment";
+import News from "./compnents/News";
 
 const items = [
   {
@@ -63,6 +64,9 @@ const App = () => {
       </Route>
       <Route path="/increment">
         <Increment />
+      </Route>
+      <Route path="/news">
+        <News />
       </Route>
     </div>
   );

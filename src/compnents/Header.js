@@ -18,6 +18,9 @@ const Header = () => {
       <Link href="/increment" className="item">
         Increment
       </Link>
+      <Link href="/news" className="item">
+        News
+      </Link>
     </div>
   );
 };
