@@ -29,22 +29,28 @@ export default function News() {
     fetchNews();
   }, [url]);
 
+  const searchForm = () => (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={searchQuery} onChange={handleChange} />
+      <button>Search</button>
+    </form>
+  );
+
+  const showLoading = () => (loading ? <p>Loading...</p> : "");
+
+  const showNews = () =>
+    news.map((newsItem) => (
+      <p key={newsItem.objectID}>
+        <a href={newsItem.url}>{newsItem.title}</a>
+      </p>
+    ));
+
   return (
     <div>
       <h2>News</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={searchQuery} onChange={handleChange} />
-        <button>Search</button>
-      </form>
-      {loading ? (
-        <p>...Loading</p>
-      ) : (
-        news.map((newsItem) => (
-          <p key={newsItem.objectID}>
-            <a href={newsItem.url}>{newsItem.title}</a>
-          </p>
-        ))
-      )}
+      {searchForm()}
+      {showLoading()}
+      {showNews()}
     </div>
   );
 }
